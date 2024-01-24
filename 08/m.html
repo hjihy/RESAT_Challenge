@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mm.css">
+  <title>미니인턴 서비스</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="menu">
+        <img src="mini.jpg"alt="mini.jpg">
+        <nav>
+          <a href="#">미니인턴</a>
+          <a href="#">스킬업</a>
+          <a href="#">M클래스</a>
+          <a href="#">채용관</a>
+          <a href="#">해피폴리오</a>
+        </nav>
+        <div class="right-menu">
+          <a href="#" style="margin-left: auto;">서비스소개</a>
+          <a href="#">회원가입</a>
+          <a href="#">로그인</a>
+          <a href="#">기업 회원</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="main-content">
+    <div class="container">
+      <img src="main.jpg" alt="main.jpg">
+    </div>
+  </section>
+
+<div id="detail-table">
+            <ul class="details">
+                <li>
+                    <article>
+                        <img class="details" src="01.jpg"/>
+                        <div class="details-title">온라인 커리어 플랫폼 '워크위즈'의 콘텐츠 기획 및 운영</div>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                      <img class="details" src="01.jpg"/>
+                        <div class="details-title">펀딩프로젝트 웹 상세 페이지 기획 및 디자인</div>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                      <img class="details" src="01.jpg"/>
+                        <div class="details-title">행사인력 구인구직 서비스 기업 '행아웃' CI 디자인 제안</div>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                      <img class="details" src="01.jpg"/>
+                        <div class="details-title">스타트업 특성을 고려한 사업비 예산 수립 및 지출 관리 효율화 방안 제안</div>
+                    </article>
+                </li>
+            </ul>
+
+            <section class="slider">
+              <div class="slides">
+                <div class="slide">
+                  <img src="1.jpg" alt="1.jpg">
+                  <div class="text-container">
+                    <p class="details-title">구글 스프레드시트로 마케팅 데이터 분석하기</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <img src="2.jpg" alt="2.jpg">
+                  <div class="text-container">
+                    <p class="details-title">CRM 마케팅 이해하기</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <img src="3.jpg" alt="3.jpg">
+                  <div class="text-container">
+                    <h2 class="details-title">검색 광고(SA) 이해하기</h2>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          
+            <footer>
+              <div class="container">
+                <p>© 2024 미니인턴 서비스. All rights reserved.</p>
+              </div>
+            </footer>
+          
+            <script>
+              // 자동 슬라이드 기능 추가
+              let currentIndex = 0;
+              const slides = document.querySelectorAll('.slide');
+              const totalSlides = slides.length;
+          
+              function showSlide(index) {
+                slides.forEach((slide, i) => {
+                  slide.style.display = i === index ? 'block' : 'none';
+                });
+              }
+          
+              function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                showSlide(currentIndex);
+              }
+          
+              // 일정 간격으로 자동 전환
+              const slideInterval = setInterval(nextSlide, 3000);
+            </script>
+          </body>
+          </html>
