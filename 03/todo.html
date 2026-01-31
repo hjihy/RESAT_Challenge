@@ -2,81 +2,43 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>To-do Challenge</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="./todo.css">
 </head>
 <body>
-  <main class="app">
-    <header class="header">
-      <h1 class="title">To-do</h1>
-      <p class="subtitle">우선순위 / 수정 / 해결체크 / 필터 / 정렬</p>
-    </header>
+  <main class="wrap">
+    <section class="card">
+      <h1 class="title">To-Do List</h1>
 
-    <!-- 입력 영역 -->
-    <section class="card input-card" aria-label="할 일 작성">
-      <div class="row">
-        <label class="sr-only" for="todoInput">할 일</label>
-        <input id="todoInput" class="input" type="text" maxlength="120" placeholder="할 일을 입력하세요 (예: API 문서 읽기)" />
-      </div>
+      <div class="form">
+        <div class="form-row">
+          <label class="label">할 일 작성:</label>
+          <input id="taskInput" class="input" type="text" />
+        </div>
 
-      <div class="row row-2">
-        <div class="field">
-          <label for="prioritySelect" class="label">우선순위</label>
+        <div class="form-row">
+          <label class="label">우선순위:</label>
           <select id="prioritySelect" class="select">
-            <option value="low">낮음</option>
-            <option value="medium" selected>보통</option>
-            <option value="high">높음</option>
-            <option value="urgent">아주 높음</option>
+            <option value="낮음" selected>낮음</option>
+            <option value="보통">보통</option>
+            <option value="높음">높음</option>
           </select>
         </div>
 
-        <button id="addBtn" class="btn primary" type="button">
-          + 할 일 추가하기
-        </button>
+        <button id="addBtn" class="btn btn-add">할 일 추가</button>
       </div>
 
-      <p class="hint" id="hintText">Enter로도 추가할 수 있어요.</p>
+      <div class="filters">
+        <button class="btn btn-filter active" data-filter="all">✓ 전체</button>
+        <button class="btn btn-filter" data-filter="done">해결</button>
+        <button class="btn btn-filter" data-filter="todo">미해결</button>
+      </div>
+
+      <div class="list" id="list"></div>
     </section>
-
-    <!-- 컨트롤 (필터/정렬) -->
-    <section class="card controls" aria-label="리스트 컨트롤">
-      <div class="segmented" role="tablist" aria-label="필터">
-        <button class="seg active" data-filter="all" role="tab" aria-selected="true" type="button">전체</button>
-        <button class="seg" data-filter="done" role="tab" aria-selected="false" type="button">해결</button>
-        <button class="seg" data-filter="todo" role="tab" aria-selected="false" type="button">미해결</button>
-      </div>
-
-      <div class="right-controls">
-        <label class="label" for="sortSelect">정렬</label>
-        <select id="sortSelect" class="select">
-          <option value="createdDesc" selected>최신순</option>
-          <option value="createdAsc">오래된순</option>
-          <option value="priorityDesc">우선순위 높은순</option>
-          <option value="priorityAsc">우선순위 낮은순</option>
-        </select>
-      </div>
-    </section>
-
-    <!-- 리스트 -->
-    <section class="card list-card" aria-label="할 일 목록">
-      <div class="list-header">
-        <h2 class="list-title">목록</h2>
-        <div class="stats" id="statsText">0개</div>
-      </div>
-
-      <ul id="todoList" class="list" aria-live="polite"></ul>
-
-      <div id="emptyState" class="empty">
-      </div>
-    </section>
-
-    <footer class="footer">
-      <small>
-      </small>
-    </footer>
   </main>
-
-  <script src="app.js"></script>
+  
+  <script src="./todo.js"></script>
 </body>
 </html>
